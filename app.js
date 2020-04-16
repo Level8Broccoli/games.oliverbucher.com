@@ -38,6 +38,9 @@ var app = new Vue({
                 return 'has-text-danger';
             }
         },
+        nameOfTheGame(game) {
+            return game.name[this.currentLanguage] || game.name;
+        },
     },
     computed: {
         i18n() {

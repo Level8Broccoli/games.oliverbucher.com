@@ -50,7 +50,7 @@
                                     </figure>
                                 </td>
                                 <td>
-                                    {{ game.name[currentLanguage] }}
+                                    {{ nameOfTheGame(game) }}
                                     <div v-if="game.tags" class="tags">
                                         <span v-for="tag in game.tags" class="tag is-info">{{ i18n[tag] }}</span>
                                     </div>

@@ -37,10 +37,7 @@ app.games = [{
         complexity: 5,
     },
     {
-        name: {
-            Deutsch: 'Deutscher Titel',
-            English: 'Englischer Titel',
-        },
+        name: 'Universeller Titel',
         tags: ['coop', 'familyFriendly', 'adultsOnly'],
         img: 'https://source.unsplash.com/random/345x393',
         playerCount: {
