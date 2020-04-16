@@ -11,37 +11,67 @@
 </head>
 
 <body>
-    <nav class="navbar has-shadow is-success">
-        <div class="container">
-            <div class="navbar-brand" style="align-items: baseline;">
-                <div class="navbar-item">
-                    <h1 class="title has-text-white">
-                        Spiel-Empfehlungen
-                    </h1>
+    <div id="app">
+        <nav class="navbar has-shadow is-dark">
+            <div class="container">
+                <div class="navbar-brand">
+                    <div class="navbar-item">
+                        <h1 class="title has-text-white">
+                            {{ i18n.siteTitle }}
+                        </h1>
+                    </div>
+                    <a class="navbar-item" v-for="translation in translations" @click="changeLanguage">
+                        <strong v-if="translation.language == currentLanguage">{{ translation.language }}</strong>
+                        <span v-else>{{ translation.language }}</span>
+                    </a>
                 </div>
-                <div class="navbar-item has-text-white-ter is-italic">by Oliver</div>
             </div>
-        </div>
-    </nav>
-    <section class="section">
-        <div class="container" id="app">
-            <div class="table-container">
-                <table class="table is-striped is-hoverable is-fullwidth">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="game in games">
-                            <td>{{ game.name }}</td>
-                        </tr>
-                    </tbody>
-                </table>
+        </nav>
+        <section class="section">
+            <div class="container">
+                <div class="table-container">
+                    <table class="table is-striped is-hoverable is-fullwidth">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>{{ i18n.gameTitle }}</th>
+                                <th>{{ i18n.playerCount }}</th>
+                                <th>{{ i18n.duration }}</th>
+                                <th>{{ i18n.age }}</th>
+                                <th>{{ i18n.complexity }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="game in games">
+                                <td>
+                                    <figure class="image is-64x64">
+                                        <img :src="game.img" :alt="game.name"
+                                            style="object-fit: scale-down; height: 100%; width: 100%;">
+                                    </figure>
+                                </td>
+                                <td>
+                                    {{ game.name[currentLanguage] }}
+                                    <div v-if="game.tags" class="tags">
+                                        <span v-for="tag in game.tags" class="tag is-info">{{ i18n[tag] }}</span>
+                                    </div>
+                                </td>
+                                <td>{{ game.playerCount.min }} &ndash; {{ game.playerCount.max }}</td>
+                                <td>{{ game.duration.min }} &ndash; {{ game.duration.max }}</td>
+                                <td>{{ game.age.min }}+</td>
+                                <td>
+                                    <span class="icon" :class="complexityColor(game.complexity)">
+                                        <i class="fas" :class="'fa-dice-' + complexityScale(game.complexity)"></i>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
     <script src="app.js"></script>
+    <script src="data.js"></script>
 </body>
 
 </html>

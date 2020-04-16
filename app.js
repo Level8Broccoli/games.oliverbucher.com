@@ -3,21 +3,48 @@
 var app = new Vue({
     el: '#app',
     data: {
-        games: [{
-            name: 'Spieltitel',
-            img: 'https://source.unsplash.com/random',
-            playerCount: {
-                min: 2,
-                max: 5,
+        games: [],
+        translations: [],
+        currentLanguage: 'Deutsch',
+    },
+    methods: {
+        changeLanguage(e) {
+            const lang = e.target.innerText;
+            this.currentLanguage = lang;
+        },
+        complexityScale(num) {
+            if (num <= 1) {
+                return 'one';
+            } else if (num <= 2) {
+                return 'two';
+            } else if (num <= 3) {
+                return 'three';
+            } else if (num <= 4) {
+                return 'four';
+            } else {
+                return 'five';
             }
         },
-        {
-            name: 'Spieltitel2',
-            img: 'https://source.unsplash.com/random',
-            playerCount: {
-                min: 1,
-                max: 10,
+        complexityColor(num) {
+            if (num <= 1) {
+                return 'has-text-grey-light';
+            } else if (num <= 2) {
+                return 'has-text-success';
+            } else if (num <= 3) {
+                return 'has-text-info';
+            } else if (num <= 4) {
+                return 'has-text-warning';
+            } else {
+                return 'has-text-danger';
             }
-        }]
-    }
-})
+        },
+    },
+    computed: {
+        i18n() {
+            if (this.translations.length > 0) {
+                return this.translations.find(t => t.language == this.currentLanguage);
+            }
+            return '';
+        },
+    },
+});
