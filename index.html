@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <title>Spiele</title>
+</head>
+
+<body>
+    <nav class="navbar has-shadow is-success">
+        <div class="container">
+            <div class="navbar-brand" style="align-items: baseline;">
+                <div class="navbar-item">
+                    <h1 class="title has-text-white">
+                        Spiel-Empfehlungen
+                    </h1>
+                </div>
+                <div class="navbar-item has-text-white-ter is-italic">by Oliver</div>
+            </div>
+        </div>
+    </nav>
+    <section class="section">
+        <div class="container" id="app">
+            <div class="table-container">
+                <table class="table is-striped is-hoverable is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="game in games">
+                            <td>{{ game.name }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+
+</html>
