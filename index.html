@@ -39,20 +39,23 @@
                                 <th>{{ i18n.duration }}</th>
                                 <th>{{ i18n.age }}</th>
                                 <th>{{ i18n.complexity }}</th>
+                                <th>{{ i18n.description }}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="game in games">
                                 <td>
                                     <figure class="image is-64x64">
-                                        <img :src="game.img" :alt="game.name"
+                                        <img :src="game.coverImg" :alt="game.name"
                                             style="object-fit: scale-down; height: 100%; width: 100%;">
                                     </figure>
                                 </td>
                                 <td>
-                                    {{ nameOfTheGame(game) }}
+                                    <strong class="has-text-grey-darker">
+                                        {{ nameOfTheGame(game) }}
+                                    </strong>
                                     <div v-if="game.tags" class="tags">
-                                        <span v-for="tag in game.tags" class="tag is-info">{{ i18n[tag] }}</span>
+                                        <span v-for="tag in game.tags" class="tag is-info" :class="tag == 'ch' ? 'is-light' : ''">{{ i18n[tag] }}</span>
                                     </div>
                                 </td>
                                 <td>{{ game.playerCount.min }} &ndash; {{ game.playerCount.max }}</td>
@@ -63,6 +66,7 @@
                                         <i class="fas" :class="'fa-dice-' + complexityScale(game.complexity)"></i>
                                     </span>
                                 </td>
+                                <td>{{ game.description[currentLanguage] }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -72,6 +76,7 @@
     </div>
     <script src="app.js"></script>
     <script src="data.js"></script>
+    <script src="translations.js"></script>
 </body>
 
 </html>

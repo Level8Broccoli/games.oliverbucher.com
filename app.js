@@ -27,15 +27,15 @@ var app = new Vue({
         },
         complexityColor(num) {
             if (num <= 1) {
-                return 'has-text-grey-light';
-            } else if (num <= 2) {
                 return 'has-text-success';
-            } else if (num <= 3) {
+            } else if (num <= 2) {
                 return 'has-text-info';
-            } else if (num <= 4) {
+            } else if (num <= 3) {
                 return 'has-text-warning';
-            } else {
+            } else if (num <= 4) {
                 return 'has-text-danger';
+            } else {
+                return 'has-text-grey-darker';
             }
         },
         nameOfTheGame(game) {
