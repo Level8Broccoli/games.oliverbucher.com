@@ -11,69 +11,9 @@
 </head>
 
 <body>
-    <div id="app">
-        <nav class="navbar has-shadow is-dark">
-            <div class="container">
-                <div class="navbar-brand">
-                    <div class="navbar-item">
-                        <h1 class="title has-text-white">
-                            {{ i18n.siteTitle }}
-                        </h1>
-                    </div>
-                    <a class="navbar-item" v-for="translation in translations" @click="changeLanguage">
-                        <strong v-if="translation.language == currentLanguage">{{ translation.language }}</strong>
-                        <span v-else>{{ translation.language }}</span>
-                    </a>
-                </div>
-            </div>
-        </nav>
-        <section class="section">
-            <div class="container">
-                <div class="table-container">
-                    <table class="table is-striped is-hoverable is-fullwidth">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>{{ i18n.gameTitle }}</th>
-                                <th>{{ i18n.playerCount }}</th>
-                                <th>{{ i18n.duration }}</th>
-                                <th>{{ i18n.age }}</th>
-                                <th>{{ i18n.complexity }}</th>
-                                <th>{{ i18n.description }}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="game in games">
-                                <td>
-                                    <figure class="image is-64x64">
-                                        <img :src="game.coverImg" :alt="game.name"
-                                            style="object-fit: scale-down; height: 100%; width: 100%;">
-                                    </figure>
-                                </td>
-                                <td>
-                                    <strong class="has-text-grey-darker">
-                                        {{ nameOfTheGame(game) }}
-                                    </strong>
-                                    <div v-if="game.tags" class="tags">
-                                        <span v-for="tag in game.tags" class="tag is-info" :class="tag == 'ch' ? 'is-light' : ''">{{ i18n[tag] }}</span>
-                                    </div>
-                                </td>
-                                <td>{{ game.playerCount.min }} &ndash; {{ game.playerCount.max }}</td>
-                                <td>{{ game.duration.min }} &ndash; {{ game.duration.max }}</td>
-                                <td>{{ game.age.min }}+</td>
-                                <td>
-                                    <span class="icon" :class="complexityColor(game.complexity)">
-                                        <i class="fas" :class="'fa-dice-' + complexityScale(game.complexity)"></i>
-                                    </span>
-                                </td>
-                                <td>{{ game.description[currentLanguage] }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-    </div>
+    <div id="app"></div>
+
+    <script src="components.js"></script>
     <script src="app.js"></script>
     <script src="data.js"></script>
     <script src="translations.js"></script>

@@ -1,6 +1,6 @@
 'use strict';
 
-var app = new Vue({
+const app = new Vue({
     el: '#app',
     data: {
         games: [],
@@ -8,38 +8,8 @@ var app = new Vue({
         currentLanguage: 'Deutsch',
     },
     methods: {
-        changeLanguage(e) {
-            const lang = e.target.innerText;
+        changeLanguage(lang) {
             this.currentLanguage = lang;
-        },
-        complexityScale(num) {
-            if (num <= 1) {
-                return 'one';
-            } else if (num <= 2) {
-                return 'two';
-            } else if (num <= 3) {
-                return 'three';
-            } else if (num <= 4) {
-                return 'four';
-            } else {
-                return 'five';
-            }
-        },
-        complexityColor(num) {
-            if (num <= 1) {
-                return 'has-text-success';
-            } else if (num <= 2) {
-                return 'has-text-info';
-            } else if (num <= 3) {
-                return 'has-text-warning';
-            } else if (num <= 4) {
-                return 'has-text-danger';
-            } else {
-                return 'has-text-grey-darker';
-            }
-        },
-        nameOfTheGame(game) {
-            return game.name[this.currentLanguage] || game.name;
         },
     },
     computed: {
@@ -50,4 +20,10 @@ var app = new Vue({
             return '';
         },
     },
+    template: `
+        <div>
+            <navbar :i18n="i18n" :translations="translations" :currentLanguage="currentLanguage" @change-language="changeLanguage" />
+            <game-list :i18n="i18n" :games="games" :currentLanguage="currentLanguage" />
+        </div>
+    `,
 });

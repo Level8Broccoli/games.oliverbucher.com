@@ -1,6 +1,7 @@
 'use strict';
 
 app.games = [{
+        id: 1,
         bggUrl: 'https://boardgamegeek.com/boardgame/195842/kampf-gegen-das-bunzlitum',
         name: 'Kampf gegen das Bünzlitum',
         playerCount: {
@@ -9,6 +10,7 @@ app.games = [{
         },
         duration: {
             min: 30,
+            max: 30,
         },
         age: {
             min: 18,
@@ -22,6 +24,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepagezoom/img/rJnQdPpIyRPudWFEW7Yq8f258wU=/fit-in/1200x900/filters:no_upscale()/pic2949384.jpg',
     },
     {
+        id: 2,
         bggUrl: 'https://boardgamegeek.com/boardgame/147151/concept',
         name: 'Concept',
         playerCount: {
@@ -30,6 +33,7 @@ app.games = [{
         },
         duration: {
             min: 40,
+            max: 40,
         },
         age: {
             min: 10,
@@ -43,6 +47,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepagezoom/img/FcJBBUgQiZuuatrvaRxjG6i2fU4=/fit-in/1200x900/filters:no_upscale()/pic4991925.jpg',
     },
     {
+        id: 3,
         bggUrl: 'https://boardgamegeek.com/boardgame/98778/hanabi',
         name: 'Hanabi',
         playerCount: {
@@ -51,12 +56,13 @@ app.games = [{
         },
         duration: {
             min: 25,
+            max: 25,
         },
         age: {
             min: 8,
         },
         complexity: 1.7,
-        tags: ['coop',  'memory', 'ch', ],
+        tags: ['coop', 'memory', 'ch', ],
         description: {
             Deutsch: 'Versucht gemeinsam die Feuerwerkskarten in der richtigen Reihenfolge zu legen. Twist: Ihr seht nur die Karten der anderen, aber nicht eure eigenen.',
             English: 'Hanabi is a cooperative game in which players try to create the perfect fireworks show by placing the cards on the table in the right order.',
@@ -64,6 +70,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepagezoom/img/F6yCXBMt2zZumJaL3yJf6vp1dZ8=/fit-in/1200x900/filters:no_upscale()/pic2007286.jpg',
     },
     {
+        id: 4,
         bggUrl: 'https://boardgamegeek.com/boardgame/171131/captain-sonar',
         name: 'Captain Sonar',
         playerCount: {
@@ -86,6 +93,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepagezoom/img/V-uAsFAay67K_QcKwzu4ZCR5TsE=/fit-in/1200x900/filters:no_upscale()/pic3013621.png',
     },
     {
+        id: 5,
         bggUrl: 'https://boardgamegeek.com/boardgame/225694/decrypto',
         name: 'Decrypto',
         playerCount: {
@@ -108,6 +116,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepagezoom/img/kcann6owho859IyNxVuqelXrgtA=/fit-in/1200x900/filters:no_upscale()/pic3759421.jpg',
     },
     {
+        id: 6,
         bggUrl: 'https://boardgamegeek.com/boardgame/134352/two-rooms-and-boom',
         name: 'Two Rooms and a Boom',
         playerCount: {
@@ -130,6 +139,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepagezoom/img/1rgpFADAqzPHwgIW3es7wZI_8EA=/fit-in/1200x900/filters:no_upscale()/pic2335221.png',
     },
     {
+        id: 7,
         bggUrl: 'https://boardgamegeek.com/boardgame/215311/downforce',
         name: 'Downforce',
         playerCount: {
@@ -152,6 +162,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepagezoom/img/kM9jdgGsozthagPypw5vd9ZT-Hk=/fit-in/1200x900/filters:no_upscale()/pic3432548.png',
     },
     {
+        id: 8,
         bggUrl: 'https://boardgamegeek.com/boardgame/239188/chronicles-crime',
         name: 'Chronicles of Crime',
         playerCount: {
@@ -174,6 +185,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepagezoom/img/TzfUaQJFt9ZB1QkxlhU7V27DFm0=/fit-in/1200x900/filters:no_upscale()/pic4317519.jpg',
     },
     {
+        id: 9,
         bggUrl: 'https://boardgamegeek.com/boardgame/284083/crew-quest-planet-nine',
         name: {
             Deutsch: 'Die Crew: Reist gemeinsam zum 9. Planeten',
@@ -185,6 +197,7 @@ app.games = [{
         },
         duration: {
             min: 20,
+            max: 20,
         },
         age: {
             min: 10,
@@ -198,6 +211,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepagezoom/img/yLWtkMKP9vzfHvOOt2egX-CZmz4=/fit-in/1200x900/filters:no_upscale()/pic5078567.jpg',
     },
     {
+        id: 10,
         bggUrl: 'https://boardgamegeek.com/boardgame/218333/rhino-hero-super-battle',
         name: 'Rhino Hero: Super Battle',
         playerCount: {
@@ -220,6 +234,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/psSnPftmcN-PnpViv9OWP42loSE=/fit-in/900x600/filters:no_upscale()/pic3873067.jpg',
     },
     {
+        id: 11,
         bggUrl: 'https://boardgamegeek.com/boardgame/244274/crusoe-crew',
         name: {
             Deutsch: 'Kuala',
@@ -231,6 +246,7 @@ app.games = [{
         },
         duration: {
             min: 45,
+            max: 45,
         },
         age: {
             min: 7,
@@ -244,6 +260,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/bm-xcH8gNLgwbgm1Vzm3gY9akt0=/fit-in/900x600/filters:no_upscale()/pic4403063.png',
     },
     {
+        id: 12,
         bggUrl: 'https://boardgamegeek.com/boardgame/39856/dixit',
         name: 'Dixit',
         playerCount: {
@@ -252,6 +269,7 @@ app.games = [{
         },
         duration: {
             min: 30,
+            max: 30,
         },
         age: {
             min: 8,
@@ -265,6 +283,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/tXcbYnGJzT7Pg4_4Z05dBvlrrJY=/fit-in/900x600/filters:no_upscale()/pic3483909.jpg',
     },
     {
+        id: 13,
         bggUrl: 'https://boardgamegeek.com/boardgame/188834/secret-hitler',
         name: 'Secret Hitler',
         playerCount: {
@@ -272,7 +291,8 @@ app.games = [{
             max: 10,
         },
         duration: {
-            min: 45
+            min: 45,
+            max: 45,
         },
         age: {
             min: 13,
@@ -286,6 +306,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/lLzsghVIr1cEC6Dii4_GA0ySWpQ=/fit-in/900x600/filters:no_upscale()/pic5164305.jpg',
     },
     {
+        id: 14,
         bggUrl: 'https://boardgamegeek.com/boardgame/136991/loony-quest',
         name: 'Looney Quest',
         playerCount: {
@@ -308,6 +329,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/QsnjLdVxcBZh6dBm65c0b3VLyng=/fit-in/900x600/filters:no_upscale()/pic3043308.jpg',
     },
     {
+        id: 15,
         bggUrl: 'https://boardgamegeek.com/boardgamefamily/57676/railroad-ink',
         name: 'Railroad Ink',
         playerCount: {
@@ -330,6 +352,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/uBxwHLf1MnCJPSuEHCX-2cBxTP8=/fit-in/900x600/filters:no_upscale()/pic4968592.png',
     },
     {
+        id: 16,
         bggUrl: 'https://boardgamegeek.com/boardgame/244608/menara',
         name: 'Menara',
         playerCount: {
@@ -352,6 +375,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepagezoom/img/ipZGo3hnR1aajYTxENdgcYX8Ryw=/fit-in/1200x900/filters:no_upscale()/pic3944407.jpg',
     },
     {
+        id: 17,
         bggUrl: 'https://boardgamegeek.com/boardgamefamily/57030/kosmos-adventure-games-series',
         name: 'Adventure Games',
         playerCount: {
@@ -360,6 +384,7 @@ app.games = [{
         },
         duration: {
             min: 75,
+            max: 75,
         },
         age: {
             min: 8,
@@ -373,6 +398,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/B_GYjDUr1dOClyhTDmUjjf4C-Vw=/fit-in/900x600/filters:no_upscale()/pic4863953.png',
     },
     {
+        id: 18,
         bggUrl: 'https://boardgamegeek.com/boardgame/147370/robot-turtles',
         name: 'Robot Turtles',
         playerCount: {
@@ -381,6 +407,7 @@ app.games = [{
         },
         duration: {
             min: 15,
+            max: 15,
         },
         age: {
             min: 3,
@@ -394,6 +421,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/mqaOy3xoCCAdhGxtCy-kv3-vyhs=/fit-in/900x600/filters:no_upscale()/pic2047441.jpg',
     },
     {
+        id: 19,
         bggUrl: 'https://boardgamegeek.com/boardgame/206915/tempel-des-schreckens',
         name: 'Tempel des Schreckens',
         playerCount: {
@@ -402,6 +430,7 @@ app.games = [{
         },
         duration: {
             min: 15,
+            max: 15,
         },
         age: {
             min: 8,
@@ -415,6 +444,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/Y369WctkIlFhQmCfUWbyuq765jg=/fit-in/900x600/filters:no_upscale()/pic3141267.png',
     },
     {
+        id: 20,
         bggUrl: 'https://boardgamegeek.com/boardgame/150145/skull-king',
         name: 'Skull King',
         playerCount: {
@@ -423,6 +453,7 @@ app.games = [{
         },
         duration: {
             min: 30,
+            max: 30,
         },
         age: {
             min: 8,
@@ -436,6 +467,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/KjdH24s43HNaNpmUAkx7qB0nfxc=/fit-in/900x600/filters:no_upscale()/pic1886632.png',
     },
     {
+        id: 21,
         bggUrl: 'https://boardgamegeek.com/boardgame/178900/codenames',
         name: 'Codenames',
         playerCount: {
@@ -444,6 +476,7 @@ app.games = [{
         },
         duration: {
             min: 15,
+            max: 15,
         },
         age: {
             min: 10,
@@ -457,6 +490,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/BwJJTrofiaH0Muxuo5rv0VCmuCY=/fit-in/900x600/filters:no_upscale()/pic2582929.jpg',
     },
     {
+        id: 22,
         bggUrl: 'https://boardgamegeek.com/boardgame/175117/celestia',
         name: 'Celestia',
         playerCount: {
@@ -465,6 +499,7 @@ app.games = [{
         },
         duration: {
             min: 30,
+            max: 30,
         },
         age: {
             min: 8,
@@ -478,6 +513,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/eHGT0BNj7JbWL87oAqbtdO7bnpw=/fit-in/900x600/filters:no_upscale()/pic2577990.jpg',
     },
     {
+        id: 23,
         bggUrl: 'https://boardgamegeek.com/boardgame/28023/jamaica',
         name: 'Jamaica',
         playerCount: {
@@ -500,6 +536,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/S3vB9iH4B0QhsHhc_P6uU9hyyoY=/fit-in/900x600/filters:no_upscale()/pic1502119.jpg',
     },
     {
+        id: 24,
         bggUrl: 'https://boardgamegeek.com/boardgame/9209/ticket-ride',
         name: {
             Deutsch: 'Zug um Zug',
@@ -525,6 +562,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/JrPAWdwNO6pAJGQ0snkUw7A0OcI=/fit-in/900x600/filters:no_upscale()/pic38668.jpg',
     },
     {
+        id: 25,
         bggUrl: 'https://boardgamegeek.com/boardgame/82168/escape-aliens-outer-space',
         name: 'Escape from the Aliens in Outer Space',
         playerCount: {
@@ -547,6 +585,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/8gt1MO6UUn53Yu0gPpv647eDSd0=/fit-in/900x600/filters:no_upscale()/pic2792336.png',
     },
     {
+        id: 26,
         bggUrl: 'https://boardgamegeek.com/boardgame/275467/letter-jam',
         name: 'Letter Jam',
         playerCount: {
@@ -555,6 +594,7 @@ app.games = [{
         },
         duration: {
             min: 45,
+            max: 45,
         },
         age: {
             min: 10,
@@ -568,6 +608,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/rEwj6edARkCUXyGDb6QHcuJQPNU=/fit-in/900x600/filters:no_upscale()/pic4853794.jpg',
     },
     {
+        id: 27,
         bggUrl: 'https://boardgamegeek.com/boardgame/219215/werewords',
         name: {
             Deutsch: 'Werwörter',
@@ -579,6 +620,7 @@ app.games = [{
         },
         duration: {
             min: 10,
+            max: 10,
         },
         age: {
             min: 8,
@@ -592,6 +634,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/mh7NsK9LY7ay-VgJytFTfknuk04=/fit-in/900x600/filters:no_upscale()/pic4415135.jpg',
     },
     {
+        id: 28,
         bggUrl: 'https://boardgamegeek.com/boardgame/83195/ghost-blitz',
         name: {
             Deutsch: 'Geistesblitz',
@@ -603,6 +646,7 @@ app.games = [{
         },
         duration: {
             min: 20,
+            max: 20,
         },
         age: {
             min: 5,
@@ -616,6 +660,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/39Zbr5IMi5Azj9KCR8X-zF_SDqM=/fit-in/900x600/filters:no_upscale()/pic2034769.jpg',
     },
     {
+        id: 29,
         bggUrl: 'https://boardgamegeek.com/boardgame/273477/obscurio',
         name: 'Obscurio',
         playerCount: {
@@ -624,6 +669,7 @@ app.games = [{
         },
         duration: {
             min: 40,
+            max: 40,
         },
         age: {
             min: 8,
@@ -641,6 +687,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepagezoom/img/5vIXY0-uojENNohqdB07ezvsv30=/fit-in/1200x900/filters:no_upscale()/pic4611791.jpg',
     },
     {
+        id: 30,
         bggUrl: 'https://boardgamegeek.com/boardgame/199478/flamme-rouge',
         name: 'Flamme Rouge',
         playerCount: {
@@ -663,6 +710,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/b-A7fjmhsvR9AbtmoEt7Ba_aCNE=/fit-in/900x600/filters:no_upscale()/pic3482521.jpg',
     },
     {
+        id: 31,
         bggUrl: 'https://boardgamegeek.com/boardgame/39463/cosmic-encounter',
         name: 'Cosmic Encounter',
         playerCount: {
@@ -685,6 +733,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/djutUbnd9feqHovy7jffiG-BSY8=/fit-in/900x600/filters:no_upscale()/pic4243113.jpg',
     },
     {
+        id: 32,
         bggUrl: 'https://boardgamegeek.com/boardgame/129622/love-letter',
         name: 'Love Letter',
         playerCount: {
@@ -693,6 +742,7 @@ app.games = [{
         },
         duration: {
             min: 20,
+            max: 20,
         },
         age: {
             min: 8,
@@ -706,6 +756,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/hOPZoId2WWSL0V21868AyN6nhQs=/fit-in/900x600/filters:no_upscale()/pic1401448.jpg',
     },
     {
+        id: 33,
         bggUrl: 'https://boardgamegeek.com/boardgame/230916/chop-chop',
         name: 'Chop! Chop!',
         playerCount: {
@@ -714,6 +765,7 @@ app.games = [{
         },
         duration: {
             min: 15,
+            max: 15,
         },
         age: {
             min: 6,
@@ -727,6 +779,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/MekJiompTwN3PZIQuqljvZP8ET4=/fit-in/900x600/filters:no_upscale()/pic3750948.jpg',
     },
     {
+        id: 34,
         bggUrl: 'https://boardgamegeek.com/boardgame/203427/fabled-fruit',
         name: {
             Deutsch: 'Fabelsaft',
@@ -752,6 +805,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/ZGDkfW6hK75Mm_uXRgFVnFYJSbE=/fit-in/900x600/filters:no_upscale()/pic3086825.jpg',
     },
     {
+        id: 35,
         bggUrl: 'https://boardgamegeek.com/boardgame/146312/ghost-fightin-treasure-hunters',
         name: {
             Deutsch: 'Geister, Geister, Schatzsuchmeister!',
@@ -763,6 +817,7 @@ app.games = [{
         },
         duration: {
             min: 30,
+            max: 30,
         },
         age: {
             min: 5,
@@ -776,6 +831,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/bP5YjGeL_0DYxeuSE6JTQMH98YY=/fit-in/900x600/filters:no_upscale()/pic2336485.jpg',
     },
     {
+        id: 36,
         bggUrl: 'https://boardgamegeek.com/boardgame/177524/icecool',
         name: 'ICECOOL',
         playerCount: {
@@ -784,6 +840,7 @@ app.games = [{
         },
         duration: {
             min: 30,
+            max: 30,
         },
         age: {
             min: 5,
@@ -797,6 +854,7 @@ app.games = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/4X9duGZHgkCwBa3lpuZHgto6axo=/fit-in/900x600/filters:no_upscale()/pic2937209.png',
     },
     {
+        id: 37,
         bggUrl: 'https://boardgamegeek.com/boardgame/191004/my-first-stone-age',
         name: {
             Deutsch: 'Stone Age Junior',
@@ -808,6 +866,7 @@ app.games = [{
         },
         duration: {
             min: 15,
+            max: 15,
         },
         age: {
             min: 4,
