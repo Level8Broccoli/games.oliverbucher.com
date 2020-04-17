@@ -36,11 +36,11 @@ Vue.component('game-list', {
                 <thead>
                     <tr>
                         <th></th>
-                        <th>{{ i18n.gameTitle }}</th>
-                        <th>{{ i18n.playerCount }}</th>
-                        <th>{{ i18n.duration }}</th>
-                        <th>{{ i18n.age }}</th>
-                        <th>{{ i18n.complexity }}</th>
+                        <th @click="sortByTitle">{{ i18n.gameTitle }}</th>
+                        <th @click="sortByPlayerCount">{{ i18n.playerCount }}</th>
+                        <th @click="sortByDuration">{{ i18n.duration }}</th>
+                        <th @click="sortByAge">{{ i18n.age }}</th>
+                        <th @click="sortByComplexity">{{ i18n.complexity }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,6 +52,36 @@ Vue.component('game-list', {
 </section>
     `,
     props: ['i18n', "games", "currentLanguage"],
+    methods: {
+        sortByTitle() {
+            this.$emit('sort-by', {
+                type: 'name'
+            });
+        },
+        sortByPlayerCount() {
+            this.$emit('sort-by', {
+                type: 'playerCount',
+                subtype: 'min'
+            });
+        },
+        sortByDuration() {
+            this.$emit('sort-by', {
+                type: 'duration',
+                subtype: 'min'
+            });
+        },
+        sortByAge() {
+            this.$emit('sort-by', {
+                type: 'age',
+                subtype: 'min'
+            });
+        },
+        sortByComplexity() {
+            this.$emit('sort-by', {
+                type: 'complexity'
+            });
+        },
+    }
 });
 
 Vue.component('game-entry', {
