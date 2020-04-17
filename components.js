@@ -6,11 +6,11 @@ Vue.component('navbar', {
     <div class="container">
         <div class="navbar-brand">
             <div class="navbar-item">
-                <h1 class="title has-text-white">
+                <h1 class="title has-text-white is-size-5-mobile">
                     {{ i18n.siteTitle }}
                 </h1>
             </div>
-            <a class="navbar-item" v-for="translation in translations" @click="changeLanguage">
+            <a class="navbar-item is-size-7-mobile" v-for="translation in translations" @click="changeLanguage">
                 <strong v-if="translation.language == currentLanguage">{{ translation.language }}</strong>
                 <span v-else>{{ translation.language }}</span>
             </a>
