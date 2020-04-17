@@ -238,7 +238,7 @@ Vue.component('game-entry', {
             min,
             max
         }) {
-            if (min !== max) {
+            if (min === max) {
                 return min;
             } else {
                 return `${min} &ndash; ${max}`;
