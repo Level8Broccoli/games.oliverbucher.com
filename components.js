@@ -64,7 +64,7 @@ Vue.component('game-entry', {
     </td>
     <td>
         <strong class="has-text-grey-darker">
-            {{ nameOfTheGame(game) }}
+            {{ game.name }}
         </strong>
         <div v-if="game.tags" class="tags">
             <span v-for="tag in game.tags" class="tag is-info" :class="tag == 'ch' ? 'is-light' : ''">{{ i18n[tag] }}</span>
@@ -107,9 +107,6 @@ Vue.component('game-entry', {
             } else {
                 return 'has-text-grey-darker';
             }
-        },
-        nameOfTheGame(game) {
-            return game.name[this.currentLanguage] || game.name;
         },
         duration({
             min,

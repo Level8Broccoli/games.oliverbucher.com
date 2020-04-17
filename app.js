@@ -3,13 +3,21 @@
 const app = new Vue({
     el: '#app',
     data: {
-        games: [],
+        gameList: [],
         translations: [],
         currentLanguage: 'Deutsch',
     },
     methods: {
         changeLanguage(lang) {
             this.currentLanguage = lang;
+        },
+        translateGame(game) {
+            const translatedGame = {
+                ...game
+            };
+            translatedGame.name = game.name[this.currentLanguage] || game.name;
+            translatedGame.description = game.description[this.currentLanguage];
+            return translatedGame;
         },
     },
     computed: {
@@ -18,6 +26,9 @@ const app = new Vue({
                 return this.translations.find(t => t.language == this.currentLanguage);
             }
             return '';
+        },
+        games() {
+            return this.gameList.map(g => this.translateGame(g)).sort((a, b) => a.name > b.name);
         },
     },
     template: `

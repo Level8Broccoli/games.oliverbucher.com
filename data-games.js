@@ -1,6 +1,6 @@
 'use strict';
 
-app.games = [{
+app.gameList = [{
         id: 1,
         bggUrl: 'https://boardgamegeek.com/boardgame/195842/kampf-gegen-das-bunzlitum',
         name: 'Kampf gegen das Bünzlitum',
