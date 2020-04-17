@@ -8,13 +8,13 @@ const app = new Vue({
         currentLanguage: 'Deutsch',
         sort: {
             type: 'name',
-            subtype: null,
             asc: true,
         },
     },
     methods: {
         changeLanguage(lang) {
             this.currentLanguage = lang;
+            document.title = this.i18n['siteTitle'];
         },
         translateGame(game) {
             const translatedGame = {
@@ -43,7 +43,6 @@ const app = new Vue({
             type,
             subtype
         }) {
-            console.log(subtype);
             if (this.sort.type === type) {
                 this.sort.asc = !this.sort.asc;
             } else {
@@ -67,7 +66,7 @@ const app = new Vue({
     template: `
         <div>
             <navbar :i18n="i18n" :translations="translations" :currentLanguage="currentLanguage" @change-language="changeLanguage" />
-            <game-list :i18n="i18n" :games="games" :currentLanguage="currentLanguage" @sort-by="changeSort" />
+            <game-list :i18n="i18n" :games="games" :currentLanguage="currentLanguage" :sort="sort" @sort-by="changeSort" />
         </div>
     `,
 });

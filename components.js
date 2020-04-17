@@ -36,11 +36,31 @@ Vue.component('game-list', {
                 <thead>
                     <tr>
                         <th></th>
-                        <th @click="sortByTitle">{{ i18n.gameTitle }}</th>
-                        <th @click="sortByPlayerCount">{{ i18n.playerCount }}</th>
-                        <th @click="sortByDuration">{{ i18n.duration }}</th>
-                        <th @click="sortByAge">{{ i18n.age }}</th>
-                        <th @click="sortByComplexity">{{ i18n.complexity }}</th>
+                        <th @click="sortByTitle" class="pointer">
+                            <span :class="this.sort.type !== 'name' ? 'has-text-grey' : ''">
+                                {{ i18n.gameTitle }}
+                            </span>
+                        </th>
+                        <th @click="sortByPlayerCount" class="pointer">
+                            <span :class="this.sort.type !== 'playerCount' ? 'has-text-grey' : ''">
+                                {{ i18n.playerCount }}
+                            </span>
+                        </th>
+                        <th @click="sortByDuration" class="pointer">
+                            <span :class="this.sort.type !== 'duration' ? 'has-text-grey' : ''">
+                                {{ i18n.duration }}
+                            </span>
+                        </th>
+                        <th @click="sortByAge" class="pointer">
+                            <span :class="this.sort.type !== 'age' ? 'has-text-grey' : ''">
+                                {{ i18n.age }}
+                            </span>
+                        </th>
+                        <th @click="sortByComplexity" class="pointer">
+                            <span :class="this.sort.type !== 'complexity' ? 'has-text-grey' : ''">
+                                {{ i18n.complexity }}
+                            </span>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,7 +71,7 @@ Vue.component('game-list', {
     </div>
 </section>
     `,
-    props: ['i18n', "games", "currentLanguage"],
+    props: ['i18n', "games", "currentLanguage", "sort"],
     methods: {
         sortByTitle() {
             this.$emit('sort-by', {
@@ -135,14 +155,14 @@ Vue.component('game-entry', {
             } else if (num <= 4) {
                 return 'has-text-danger';
             } else {
-                return 'has-text-grey-darker';
+                return 'has-text-greyer';
             }
         },
         duration({
             min,
             max
         }) {
-            if (min === max) {
+            if (min !== max) {
                 return min;
             } else {
                 return `${min} &ndash; ${max}`;
