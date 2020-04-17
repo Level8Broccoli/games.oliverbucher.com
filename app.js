@@ -51,6 +51,9 @@ const app = new Vue({
             }
             this.sort.subtype = subtype;
         },
+        toggleFilter() {
+
+        },
     },
     computed: {
         i18n() {
@@ -66,6 +69,9 @@ const app = new Vue({
     template: `
         <div>
             <navbar :i18n="i18n" :translations="translations" :currentLanguage="currentLanguage" @change-language="changeLanguage" />
+
+            <game-filter :i18n="i18n"/>
+
             <game-list :i18n="i18n" :games="games" :currentLanguage="currentLanguage" :sort="sort" @sort-by="changeSort" />
         </div>
     `,

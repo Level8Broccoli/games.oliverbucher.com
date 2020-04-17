@@ -27,6 +27,82 @@ Vue.component('navbar', {
     }
 });
 
+Vue.component('game-filter', {
+    template: `
+<section class="section">
+    <div class="container">
+    <h2 class="title">Filter <button class="button is-small" @click="filter = !filter">Ein/Aus</button></h2>
+        <div v-show="filter">
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">{{ i18n.playerCount }}</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control is-expanded">
+                            <input class="input" type="number" placeholder="Minimum">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control is-expanded">
+                            <input class="input" type="number" placeholder="Maxmimum">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">{{ i18n.duration }}</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control is-expanded">
+                            <input class="input" type="number" placeholder="Minimum">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control is-expanded">
+                            <input class="input" type="number" placeholder="Maxmimum">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">{{ i18n.age }}</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control is-expanded">
+                            <input class="input" type="number" placeholder="Minimum">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="field is-horizontal">
+            <div class="field-label"></div>
+            <div class="field-body">
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary">
+                        Send message
+                        </button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+    `,
+    data() {
+        return {
+            filter: true,
+        };
+    },
+    props: ['i18n']
+});
+
 Vue.component('game-list', {
     template: `
 <section class="section">
