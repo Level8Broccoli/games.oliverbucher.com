@@ -72,4 +72,10 @@ const app = new Vue({
             <game-list :i18n="i18n" :games="games" :currentLanguage="currentLanguage" :sort="sort" @sort-by="changeSort" />
         </div>
     `,
+    created: function () {
+        const url = window.location.host;
+        if (url.includes('games')) {
+            this.changeLanguage('English');
+        }
+    }
 });
