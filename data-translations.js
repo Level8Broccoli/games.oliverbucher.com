@@ -33,6 +33,7 @@ app.translations = [{
         bluffing: 'Bluffen',
         traitor: 'Verräter',
         alliance: 'Bündnisse',
+        clearFilter: 'Filter zurücksetzen',
     },
     {
         language: 'English',
@@ -67,5 +68,6 @@ app.translations = [{
         bluffing: 'Bluffing',
         traitor: 'Traitor',
         alliance: 'Alliances',
+        clearFilter: 'Reset filter',
     }
 ];

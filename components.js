@@ -27,81 +27,6 @@ Vue.component('navbar', {
     }
 });
 
-Vue.component('game-filter', {
-    template: `
-<section class="section">
-    <div class="container">
-    <h2 class="title">Filter <button class="button is-small" @click="filter = !filter">Ein/Aus</button></h2>
-        <div v-show="filter">
-            <div class="field is-horizontal">
-                <div class="field-label is-normal">
-                    <label class="label">{{ i18n.playerCount }}</label>
-                </div>
-                <div class="field-body">
-                    <div class="field">
-                        <p class="control is-expanded">
-                            <input class="input" type="number" placeholder="Minimum">
-                        </p>
-                    </div>
-                    <div class="field">
-                        <p class="control is-expanded">
-                            <input class="input" type="number" placeholder="Maxmimum">
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="field is-horizontal">
-                <div class="field-label is-normal">
-                    <label class="label">{{ i18n.duration }}</label>
-                </div>
-                <div class="field-body">
-                    <div class="field">
-                        <p class="control is-expanded">
-                            <input class="input" type="number" placeholder="Minimum">
-                        </p>
-                    </div>
-                    <div class="field">
-                        <p class="control is-expanded">
-                            <input class="input" type="number" placeholder="Maxmimum">
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="field is-horizontal">
-                <div class="field-label is-normal">
-                    <label class="label">{{ i18n.age }}</label>
-                </div>
-                <div class="field-body">
-                    <div class="field">
-                        <p class="control is-expanded">
-                            <input class="input" type="number" placeholder="Minimum">
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="field is-horizontal">
-            <div class="field-label"></div>
-            <div class="field-body">
-                <div class="field">
-                    <div class="control">
-                        <button class="button is-primary">
-                        Send message
-                        </button>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
-</section>
-    `,
-    data() {
-        return {
-            filter: true,
-        };
-    },
-    props: ['i18n']
-});
 
 Vue.component('game-list', {
     template: `
@@ -139,9 +64,7 @@ Vue.component('game-list', {
                         </th>
                     </tr>
                 </thead>
-                <tbody>
-                    <game-entry v-for="game in games" :game="game" :key="game.id" :i18n="i18n" :currentLanguage="currentLanguage" />
-                </tbody>
+                <game-entry v-for="game in games" :game="game" :key="game.id" :i18n="i18n" :currentLanguage="currentLanguage" />
             </table>
         </div>
     </div>
@@ -182,31 +105,43 @@ Vue.component('game-list', {
 
 Vue.component('game-entry', {
     template: `
-<tr>
-    <td>
-        <figure class="image is-64x64">
-            <img :src="game.coverImg" :alt="game.name" style="object-fit: scale-down; height: 100%; width: 100%;">
-        </figure>
-    </td>
-    <td>
-        <strong class="has-text-grey-darker">
-            {{ game.name }}
-        </strong>
-        <div v-if="game.tags" class="tags">
-            <span v-for="tag in game.tags" class="tag is-info" :class="tag == 'ch' ? 'is-light' : ''">{{ i18n[tag] }}</span>
-        </div>
-    </td>
-    <td>{{ game.playerCount.min }} &ndash; {{ game.playerCount.max }}</td>
-    <td v-html="duration(game.duration)"></td>
-    <td>{{ game.age.min }}+</td>
-    <td>
-        <span class="icon" :class="complexityColor(game.complexity)">
-            <i class="fas" :class="'fa-dice-' + complexityScale(game.complexity)"></i>
-        </span>
-    </td>
-</tr>
+<tbody>
+    <tr>
+        <td>
+            <figure class="image is-64x64" @click="show = !show">
+                <img :src="game.coverImg" :alt="game.name" style="object-fit: scale-down; height: 100%; width: 100%;">
+            </figure>
+        </td>
+        <td>
+            <strong class="has-text-grey-darker"  @click="show = !show">
+                {{ game.name }}
+            </strong>
+            <div v-if="game.tags" class="tags">
+                <span v-for="tag in game.tags" class="tag is-info" :class="tag == 'ch' ? 'is-light' : ''">{{ i18n[tag] }}</span>
+            </div>
+        </td>
+        <td>{{ game.playerCount.min }} &ndash; {{ game.playerCount.max }}</td>
+        <td v-html="duration(game.duration)"></td>
+        <td>{{ game.age.min }}+</td>
+        <td>
+            <span class="icon" :class="complexityColor(game.complexity)">
+                <i class="fas" :class="'fa-dice-' + complexityScale(game.complexity)"></i>
+            </span>
+        </td>
+    </tr>
+    <tr v-if="show">
+        <td></td>
+        <td colspan="4">{{ game.description }}</td>
+        <td><a target="_blank" :href="game.bggUrl" class="button is-primary is-light">BGG Eintrag ></a></td>
+    </tr>
+</tbody>
 `,
     props: ['game', 'i18n', 'currentLanguage'],
+    data() {
+        return {
+            show: false,
+        }
+    },
     methods: {
         complexityScale(num) {
             if (num <= 1) {
