@@ -34,6 +34,7 @@ app.translations = [{
         traitor: 'Verräter',
         alliance: 'Bündnisse',
         clearFilter: 'Filter zurücksetzen',
+        bggEntry: 'Eintrag in Datenbank (BGG)',
     },
     {
         language: 'English',
@@ -69,5 +70,6 @@ app.translations = [{
         traitor: 'Traitor',
         alliance: 'Alliances',
         clearFilter: 'Reset filter',
+        bggEntry: 'Entry in database (BGG)',
     }
 ];

@@ -132,7 +132,7 @@ Vue.component('game-entry', {
     <tr v-if="show">
         <td></td>
         <td colspan="4">{{ game.description }}</td>
-        <td><a target="_blank" :href="game.bggUrl" class="button is-primary is-light">BGG Eintrag ></a></td>
+        <td><a target="_blank" :href="game.bggUrl" class="button is-primary is-light">{{ i18n.bggEntry }}</a></td>
     </tr>
 </tbody>
 `,
