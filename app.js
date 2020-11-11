@@ -14,7 +14,10 @@ const app = new Vue({
     methods: {
         changeLanguage(lang) {
             this.currentLanguage = lang;
-            document.title = this.i18n['siteTitle'];
+            const siteTitle = this.i18n['siteTitle'];
+            if (siteTitle) {
+                document.title = siteTitle;
+            }
         },
         translateGame(game) {
             const translatedGame = {
