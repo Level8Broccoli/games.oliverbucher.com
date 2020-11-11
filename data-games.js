@@ -756,29 +756,6 @@ app.gameList = [{
         coverImg: 'https://cf.geekdo-images.com/imagepage/img/hOPZoId2WWSL0V21868AyN6nhQs=/fit-in/900x600/filters:no_upscale()/pic1401448.jpg',
     },
     {
-        id: 33,
-        bggUrl: 'https://boardgamegeek.com/boardgame/230916/chop-chop',
-        name: 'Chop! Chop!',
-        playerCount: {
-            min: 2,
-            max: 5,
-        },
-        duration: {
-            min: 15,
-            max: 15,
-        },
-        age: {
-            min: 6,
-        },
-        complexity: 1,
-        tags: ['coop', ],
-        description: {
-            Deutsch: 'Ein halb-kooperatives Strategiespiel für Mäusespieler: Ein Spieler spielt die Katze, die anderen die Mäuse. Abwechselnd spielt eine Maus und dann die Katze. Die Mäuse müssen zehn Käsestücke sammeln, während die Katze versucht, die vier Mäuse zu fangen.',
-            English: 'A semi-cooperative strategy game for mice players: One player plays the cat, the others, the mice. Alternately, one mouse plays, and then the cat. The mice need to collect ten pieces of cheese, whilst the cat tries to catch the four mice.',
-        },
-        coverImg: 'https://cf.geekdo-images.com/imagepage/img/MekJiompTwN3PZIQuqljvZP8ET4=/fit-in/900x600/filters:no_upscale()/pic3750948.jpg',
-    },
-    {
         id: 34,
         bggUrl: 'https://boardgamegeek.com/boardgame/203427/fabled-fruit',
         name: {
